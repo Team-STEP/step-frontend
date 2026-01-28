@@ -3,7 +3,7 @@ import { createRoot } from "react-dom/client";
 import { ThemeProvider } from "@emotion/react";
 
 import Components from "../pages/components";
-import { theme } from "@/shared/theme";
+import { theme } from "@/shared/styles/theme.ts";
 
 createRoot(document.getElementById("root")!).render(
     <StrictMode>
