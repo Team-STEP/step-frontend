@@ -1,7 +1,11 @@
+import Footer from "@/widgets/footer";
+
 const Components = () => {
-    return (<>
+    return (
+        <>
+            <Footer />
+        </>
+    );
+};
 
-    </>)
-}
-
-export default Components
+export default Components;
