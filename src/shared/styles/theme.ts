@@ -55,8 +55,66 @@ export const colors = {
     },
 } as const;
 
+export const typography = {
+    DisplayHuge: {
+        fontFamily: 'Pretendard',
+        fontSize: '30px',
+        lineHeight: '160%',
+        fontWeight: 600,
+    },
+    HeadingMedium: {
+        fontFamily: 'Pretendard',
+        fontSize: '28px',
+        lineHeight: '160%',
+        fontWeight: 500,
+    },
+    HeadingRegular: {
+        fontFamily: 'Pretendard',
+        fontSize: '28px',
+        lineHeight: '160%',
+        fontWeight: 400,
+    },
+    SubHeadingMedium: {
+        fontFamily: 'Pretendard',
+        fontSize: '24px',
+        lineHeight: '160%',
+        fontWeight: 500,
+    },
+    SubHeadingRegular: {
+        fontFamily: 'Pretendard',
+        fontSize: '24px',
+        lineHeight: '160%',
+        fontWeight: 400,
+    },
+
+    ParagraphMedium: {
+        fontFamily: 'Pretendard',
+        fontSize: '20px',
+        lineHeight: '160%',
+        fontWeight: 500,
+    },
+    ParagraphRegular: {
+        fontFamily: 'Pretendard',
+        fontSize: '20px',
+        lineHeight: '160%',
+        fontWeight: 400,
+    },
+    CaptionMedium: {
+        fontFamily: 'Pretendard',
+        fontSize: '16px',
+        lineHeight: '160%',
+        fontWeight: 500,
+    },
+    CaptionRegular: {
+        fontFamily: 'Pretendard',
+        fontSize: '16px',
+        lineHeight: '160%',
+        fontWeight: 400,
+    },
+} as const;
+
 export const theme = {
-    colors,
+    colors, typography,
 } as const;
 
 export type Theme = typeof theme;
