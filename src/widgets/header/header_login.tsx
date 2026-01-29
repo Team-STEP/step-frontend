@@ -102,7 +102,7 @@ export const UserDepartment = styled.p`
     font-size: 1rem;
     font-style: normal;
     font-weight: 500;
-    color:${({ theme }) => theme.colors.neutral[200]};  
+    color:${({ theme }) => theme.colors.text.muted};  
     margin:0;
 `;
 
