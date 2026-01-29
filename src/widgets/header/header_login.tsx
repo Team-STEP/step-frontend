@@ -41,7 +41,7 @@ export const Logo = styled.div`
 
 export const PageList = styled.div`
     width:100%;
-    aspect-ratio: 1 / 1;
+
     display:flex;
 `;
 
