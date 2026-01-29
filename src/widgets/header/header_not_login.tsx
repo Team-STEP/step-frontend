@@ -3,15 +3,10 @@ import logo from '@/shared/assets/logo.png'
 
 export const Frame = styled.header`
   display: flex;
-
   width: 100%;
   height: 8rem;
-
   align-items: center;
   justify-content: center;
-
-
-
 `;
 
 export const Content = styled.div`
@@ -19,9 +14,6 @@ export const Content = styled.div`
   justify-content: space-between;
   width: 96rem;
   height:4rem;
-
-
-
   align-items: center;
 `;
 
@@ -42,17 +34,14 @@ export const LoginButton = styled.button`
     height:3.5rem;
     font-family: Pretendard;
     font-size: 1.3rem;
-
     border:none;
     border-radius:8px;
     text-align: center;
     color:${({ theme }) => theme.colors.default.white};
     background-color:${({ theme }) => theme.colors.primary[200]};
-
     &:hover {
         background-color: ${({ theme }) => theme.colors.primary[250]};
     }
-
     &:active {
         background-color: ${({ theme }) => theme.colors.primary[300]};
         transform: scale(0.96);
