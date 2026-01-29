@@ -1,16 +1,14 @@
 import styled from '@emotion/styled';
 import logo from '@/shared/assets/logo.png'
-import { useState } from 'react';
+import userProfile from '@/shared/assets/default-profile.png'
+
 
 export const Frame = styled.header`
   display: flex;
-
   width: 100%;
   height: 8rem;
-
   align-items: center;
   justify-content: center;
-
 `;
 
 export const Content = styled.div`
@@ -18,21 +16,14 @@ export const Content = styled.div`
   justify-content: space-between;
   width: 96rem;
   height:4rem;
-
-
-
   align-items: center;
 `;
 
 export const PageListContent = styled.div`
     display: flex;
-
     width: 40rem;
     height:4rem;
-
     align-items: center;
-
-
     gap:3.25rem;
 `;
 
@@ -45,18 +36,13 @@ export const Logo = styled.div`
     height: 100%;
         object-fit: contain;
     }
-
   cursor: pointer;
 `;
 
 export const PageList = styled.div`
-    width:100%
-
+    width:100%;
     aspect-ratio: 1 / 1;
-
     display:flex;
-    
-
 `;
 
 export const PageText = styled.div<{ active?: boolean }>`
@@ -66,12 +52,9 @@ export const PageText = styled.div<{ active?: boolean }>`
     font-size: 1.125rem;
     font-style: normal;
     font-weight: 500;
-    line-height: 1.375rem; /* 122.222% */
-
+    line-height: 1.375rem;
     padding: 1rem 1.25rem;
-
     cursor: pointer;
-
     &:hover {
         color: ${({ theme }) => theme.colors.primary[200]};
     }
@@ -90,7 +73,6 @@ export const UserImage = styled.div`
     width: 2.5rem;
     height: 2.5rem;
     aspect-ratio: 1 / 1;
-
     img {
     width: 100%;
     height: 100%;
@@ -149,7 +131,7 @@ const Header = ({ status }: HeaderProps) => {
 
                 <UserCard>
                     <UserImage>
-                        <img src={logo} alt="user" /> {/*임시 이미지*/}
+                        <img src={userProfile} alt="user" /> {/*임시 이미지*/}
                     </UserImage>
                     <UserInfo>
                         <UserName>김철수</UserName>
