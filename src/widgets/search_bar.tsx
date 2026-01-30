@@ -5,11 +5,10 @@ import searchIcon from "@/shared/assets/search_button.png"
 const Frame = styled.div`
     display: inline-flex;
     padding: 1rem 1.5rem;
-    flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     gap: 0.625rem;
     border-radius: 0.5rem;
-    border: 1px solid ${({ theme }) => theme.colors.neutral[300]};
+    border: 1px solid ${({ theme }) => theme.colors.neutral[150]};
 `;
 
 const Content = styled.div`
@@ -20,13 +19,11 @@ const Content = styled.div`
 const SearchInput = styled.input<{ width: string }>`
     width: ${props => props.width}rem;
     color: ${({ theme }) => theme.colors.text.secondary};
-    font-family: Pretendard;
-    font-size: 1rem;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 160%;
+    ${({ theme }) => theme.typography.CaptionRegular};
     border: none;
     outline: none;
+    padding: 0;
+    margin: 0;
     &::placeholder {
         color: ${({ theme }) => theme.colors.text.muted};
     }
