@@ -23,6 +23,9 @@ const Input = styled.textarea`
     field-sizing: content;
     overflow: hidden;
     min-height: 1.5rem;
+    padding: 0;
+    margin: 0;
+    display: block;
 `;
 
 interface InputDefaultProps {
