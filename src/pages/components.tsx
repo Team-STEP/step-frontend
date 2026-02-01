@@ -7,6 +7,8 @@ import InputDefault from "@/widgets/input_default";
 import MyProcess from "@/widgets/myprocess";
 import AnnouncementMain from "@/widgets/announcement_main";
 
+import Comment from "@/widgets/comment";
+
 
 const Components = () => {
     return (
@@ -18,6 +20,7 @@ const Components = () => {
             <Notice />
             <MyProcess status="first" />
             <AnnouncementMain />
+            <Comment />
             <Footer />
         </>
     );
