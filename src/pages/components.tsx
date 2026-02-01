@@ -5,6 +5,7 @@ import SearchBar from "@/widgets/search_bar";
 import Notice from "@/widgets/notice";
 import InputDefault from "@/widgets/input_default";
 import MyProcess from "@/widgets/myprocess";
+import AnnouncementMain from "@/widgets/announcement_main";
 
 import Comment from "@/widgets/comment";
 
@@ -18,6 +19,7 @@ const Components = () => {
             <SearchBar width="24.5" placeholder="직무, 회사 키워드로 검색하세요" />
             <Notice />
             <MyProcess status="first" />
+            <AnnouncementMain />
             <Comment />
             <Footer />
         </>
