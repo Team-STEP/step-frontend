@@ -12,7 +12,7 @@ import role from "@/shared/assets/role_icon.png";
 
 const Frame = styled.div`
     display: inline-flex;
-    height: 14.5rem;
+    height: 12.5rem;
     padding: 2.5rem 2.5rem;
     justify-content: center;
     align-items: flex-start;
