@@ -24,7 +24,7 @@ const Frame = styled.div`
     cursor: pointer;
 
     &:hover {
-        height: 26.75rem;
+        height: 21.75rem;
         padding: 3rem 2.5rem;
     }
 `;
