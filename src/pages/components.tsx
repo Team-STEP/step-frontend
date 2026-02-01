@@ -6,6 +6,8 @@ import Notice from "@/widgets/notice";
 import InputDefault from "@/widgets/input_default";
 import MyProcess from "@/widgets/myprocess";
 
+import Comment from "@/widgets/comment";
+
 
 const Components = () => {
     return (
@@ -16,6 +18,7 @@ const Components = () => {
             <SearchBar width="24.5" placeholder="직무, 회사 키워드로 검색하세요" />
             <Notice />
             <MyProcess status="first" />
+            <Comment />
             <Footer />
         </>
     );
