@@ -1,4 +1,3 @@
-import React from "react";
 import styled from "@emotion/styled";
 import FooterLogo from "@/shared/assets/footer-logo.png";
 import GitHub from "@/shared/assets/github.png";
@@ -102,4 +101,4 @@ function Footer() {
     );
 }
 
-export default React.memo(Footer);
+export default Footer;
