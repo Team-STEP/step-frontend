@@ -9,19 +9,17 @@ const Frame = styled.div<{
     isLast?: boolean;
 }>`
     display: grid;
-    grid-template-rows: auto ${({ isOpen }) => (isOpen ? "1fr" : "0fr")};
-    transition: grid-template-rows 0.5s ease; /* 수정사항 : grid를 사용한 애니메이션 */
+    grid-template-rows: auto auto;
     width: 15.125rem;
     border: 1px solid ${({ theme }) => theme.colors.neutral[200]};
     background: ${({ theme }) => theme.colors.default.white};
     border-radius: 0.25rem;
     ${({ isOpen, isLast }) =>
-            isOpen && !isLast && `border-bottom-left-radius: 0; border-bottom-right-radius: 0;`}
-    ${({ isCompany }) =>
-            isCompany && `margin-top: 1.5rem;`}
+            isOpen && !isLast &&
+            `border-bottom-left-radius: 0; border-bottom-right-radius: 0;`}
+    ${({ isCompany }) => isCompany && `margin-top: 1.5rem;`}
 `;
 
-/* 수정사항 : 기존 Frame 안의 내용을 감싸기 위한 Header 영역 */
 const Header = styled.div`
     display: flex;
     align-items: center;
@@ -51,14 +49,20 @@ const CompanyInput = styled.input`
     margin: 0;
     color: ${({ theme }) => theme.colors.text.primary};
     ${({ theme }) => theme.typography.CaptionRegular};
-    &::placeholder {
-        color: ${({ theme }) => theme.colors.text.muted};
-    }
+    &::placeholder { color: ${({ theme }) => theme.colors.text.muted}; }
 `;
 
-/* 수정사항 : grid 애니메이션용 wrapper */
-const ListWrapper = styled.div`
+/* 수정사항 : 옵션 영역 grid 애니메이션 */
+const OptionsGrid = styled.div<{ isOpen: boolean }>`
+    display: grid;
+    grid-template-rows: ${({ isOpen }) => (isOpen ? "1fr" : "0fr")};
+    transition: grid-template-rows 0.35s ease;
     overflow: hidden;
+    align-content: start;
+`;
+
+const OptionsInner = styled.div`
+    min-height: 0;
 `;
 
 const List = styled.div`
@@ -66,15 +70,13 @@ const List = styled.div`
     color: ${({ theme }) => theme.colors.text.secondary};
     ${({ theme }) => theme.typography.CaptionRegular};
     background: ${({ theme }) => theme.colors.default.white};
-    `;
+`;
 
 const Item = styled.div`
     padding: 0.5rem 1rem;
     cursor: pointer;
-    &:hover {
-    background: ${({ theme }) => theme.colors.neutral[100]};
-    }
-    `;
+    &:hover { background: ${({ theme }) => theme.colors.neutral[100]}; }
+`;
 
 export interface FilterBoxProps {
     company: boolean;
@@ -83,36 +85,41 @@ export interface FilterBoxProps {
     last?: boolean;
 }
 
-const FilterBox = ({company, placeholder, options = [], last,}: FilterBoxProps) => {
-
+const FilterBox = ({ company, placeholder, options = [], last }: FilterBoxProps) => {
     const [open, setOpen] = useState(false);
     const [value, setValue] = useState("");
     const complete = value.length > 0;
-    const handleArrowClick = () => {setOpen(prev => !prev);};
-    const handleSelect = (item: string) => {setValue(item);setOpen(false);};
+
+    const handleArrowClick = () => { setOpen(prev => !prev); };
+    const handleSelect = (item: string) => { setValue(item); setOpen(false); };
 
     return (
         <Frame isOpen={open} isComplete={complete} isCompany={company} isLast={last}>
             <Header>
                 {company ? (
-                    <CompanyInput placeholder={placeholder} value={value} onChange={e => setValue(e.target.value)}/>
+                    <CompanyInput placeholder={placeholder} value={value} onChange={e => setValue(e.target.value)} />
                 ) : (
                     <>
                         <Text isComplete={complete}>{complete ? value : placeholder}</Text>
-                        <Arrow src={arrowIcon} alt="arrow" isOpen={open} onClick={handleArrowClick}/>
+                        <Arrow src={arrowIcon} alt="arrow" isOpen={open} onClick={handleArrowClick} />
                     </>
                 )}
             </Header>
 
             {!company && (
-                <ListWrapper>
-                    <List>
-                        {options.map(item => (
-                            <Item key={item} onClick={() => handleSelect(item)}>{item}</Item>
-                        ))}
-                    </List>
-                </ListWrapper>
+                <OptionsGrid isOpen={open}>
+                    <OptionsInner>
+                        <List>
+                            {options.map(item => (
+                                <Item key={item} onClick={() => handleSelect(item)}>
+                                    {item}
+                                </Item>
+                            ))}
+                        </List>
+                    </OptionsInner>
+                </OptionsGrid>
             )}
+
         </Frame>
     );
 };
