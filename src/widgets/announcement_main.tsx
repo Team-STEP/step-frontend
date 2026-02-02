@@ -5,10 +5,6 @@ import DDay from "@/shared/D_day/D_day";
 import person from "@/shared/assets/person_icon.png";
 import role from "@/shared/assets/role_icon.png";
 
-/** * [수정 포인트] 
- * 1. ${Frame} 변수 선택자 대신 .group 클래스 선택자를 사용했습니다.
- * 2. 모든 Hover 효과를 .group:hover & 로 통일했습니다.
- */
 
 const Frame = styled.div`
     display: inline-flex;
@@ -22,7 +18,6 @@ const Frame = styled.div`
     transition: all 0.3s ease-in-out;
     background-color: ${({ theme }) => theme.colors.default.white};
     cursor: pointer;
-
     &:hover {
         height: 21.75rem;
         padding: 3rem 2.5rem;
@@ -37,8 +32,6 @@ const Content = styled.div`
     align-items: center;
     gap: 1.25rem;
     transition: gap 0.3s ease-in-out;
-
-    /* 수정된 부분 */
     .group:hover & {
         gap: 2.375rem;
     }
@@ -164,8 +157,6 @@ const SecondSubInfoBox = styled.div`
     visibility: hidden;
     overflow: hidden;
     transition: all 0.3s ease-in-out;
-
-    /* 수정된 부분 */
     .group:hover & {
         max-height: 2rem;
         opacity: 1;
@@ -201,8 +192,6 @@ const RoleContent = styled.div`
     visibility: hidden;
     overflow: hidden;
     transition: all 0.3s ease-in-out;
-
-    /* 수정된 부분 */
     .group:hover & {
         max-height: 5rem;
         opacity: 1;
@@ -250,14 +239,11 @@ const DetailButton = styled.div`
     visibility: hidden;
     overflow: hidden;
     transition: all 0.3s ease-in-out;
-
-    /* 수정된 부분 */
     .group:hover & {
         max-height: 3rem;
         opacity: 1;
         visibility: visible;
     }
-
     p{
         ${({ theme }) => theme.typography.CaptionRegular};
         color: ${({ theme }) => theme.colors.default.white};
@@ -267,7 +253,6 @@ const DetailButton = styled.div`
 
 const AnnouncementMain = () => {
     return (
-        /* className="group" 추가하여 스타일 선택자로 활용 */
         <Frame className="group">
             <Content>
                 <Info>
