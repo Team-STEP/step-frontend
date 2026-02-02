@@ -8,18 +8,25 @@ const Frame = styled.div<{
     isCompany: boolean;
     isLast?: boolean;
 }>`
-    display: flex;
+    display: grid;
+    grid-template-rows: auto ${({ isOpen }) => (isOpen ? "1fr" : "0fr")};
+    transition: grid-template-rows 0.5s ease; /* 수정사항 : grid를 사용한 애니메이션 */
     width: 15.125rem;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0.5rem 1rem;
     border: 1px solid ${({ theme }) => theme.colors.neutral[200]};
     background: ${({ theme }) => theme.colors.default.white};
     border-radius: 0.25rem;
-    ${({ isOpen, isLast }) => 
+    ${({ isOpen, isLast }) =>
             isOpen && !isLast && `border-bottom-left-radius: 0; border-bottom-right-radius: 0;`}
     ${({ isCompany }) =>
             isCompany && `margin-top: 1.5rem;`}
+`;
+
+/* 수정사항 : 기존 Frame 안의 내용을 감싸기 위한 Header 영역 */
+const Header = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem 1rem;
 `;
 
 const Text = styled.span<{ isComplete: boolean }>`
@@ -45,15 +52,17 @@ const CompanyInput = styled.input`
     color: ${({ theme }) => theme.colors.text.primary};
     ${({ theme }) => theme.typography.CaptionRegular};
     &::placeholder {
-    color: ${({ theme }) => theme.colors.text.muted};
+        color: ${({ theme }) => theme.colors.text.muted};
     }
-    `;
+`;
+
+/* 수정사항 : grid 애니메이션용 wrapper */
+const ListWrapper = styled.div`
+    overflow: hidden;
+`;
 
 const List = styled.div`
-    width: 17.125rem;
-    border: 1px solid ${({ theme }) => theme.colors.neutral[200]};
-    border-top: none;
-    border-radius: 0 0 0.25rem 0.25rem;
+    border-top: 1px solid ${({ theme }) => theme.colors.neutral[200]};
     color: ${({ theme }) => theme.colors.text.secondary};
     ${({ theme }) => theme.typography.CaptionRegular};
     background: ${({ theme }) => theme.colors.default.white};
@@ -83,8 +92,8 @@ const FilterBox = ({company, placeholder, options = [], last,}: FilterBoxProps) 
     const handleSelect = (item: string) => {setValue(item);setOpen(false);};
 
     return (
-        <>
-            <Frame isOpen={open} isComplete={complete} isCompany={company} isLast={last}>
+        <Frame isOpen={open} isComplete={complete} isCompany={company} isLast={last}>
+            <Header>
                 {company ? (
                     <CompanyInput placeholder={placeholder} value={value} onChange={e => setValue(e.target.value)}/>
                 ) : (
@@ -93,15 +102,18 @@ const FilterBox = ({company, placeholder, options = [], last,}: FilterBoxProps) 
                         <Arrow src={arrowIcon} alt="arrow" isOpen={open} onClick={handleArrowClick}/>
                     </>
                 )}
-            </Frame>
-            {!company && open && (
-                <List>
-                    {options.map(item => (
-                        <Item key={item} onClick={() => handleSelect(item)}>{item}</Item>
-                    ))}
-                </List>
+            </Header>
+
+            {!company && (
+                <ListWrapper>
+                    <List>
+                        {options.map(item => (
+                            <Item key={item} onClick={() => handleSelect(item)}>{item}</Item>
+                        ))}
+                    </List>
+                </ListWrapper>
             )}
-        </>
+        </Frame>
     );
 };
 
