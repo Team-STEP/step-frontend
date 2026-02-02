@@ -17,7 +17,6 @@ const Frame = styled.div<{
     ${({ isOpen, isLast }) =>
             isOpen && !isLast &&
             `border-bottom-left-radius: 0; border-bottom-right-radius: 0;`}
-    ${({ isCompany }) => isCompany && `margin-top: 1.5rem;`}
 `;
 
 const Header = styled.div`
