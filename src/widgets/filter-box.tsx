@@ -1,0 +1,108 @@
+import { useState } from "react";
+import styled from "@emotion/styled";
+import arrowIcon from "@/shared/assets/arrow_down.png";
+
+const Frame = styled.div<{
+    isOpen: boolean;
+    isComplete: boolean;
+    isCompany: boolean;
+    isLast?: boolean;
+}>`
+    display: flex;
+    width: 15.125rem;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem 1rem;
+    border: 1px solid ${({ theme }) => theme.colors.neutral[200]};
+    background: ${({ theme }) => theme.colors.default.white};
+    border-radius: 0.25rem;
+    ${({ isOpen, isLast }) => 
+            isOpen && !isLast && `border-bottom-left-radius: 0; border-bottom-right-radius: 0;`}
+    ${({ isCompany }) =>
+            isCompany && `margin-top: 1.5rem;`}
+`;
+
+const Text = styled.span<{ isComplete: boolean }>`
+    color: ${({ isComplete, theme }) =>
+            isComplete ? theme.colors.text.primary : theme.colors.text.muted};
+    ${({ theme }) => theme.typography.CaptionRegular};
+`;
+
+const Arrow = styled.img<{ isOpen: boolean }>`
+    width: 1.25rem;
+    height: 0.75rem;
+    transform: rotate(${({ isOpen }) => (isOpen ? "180deg" : "0deg")});
+    transition: transform 0.2s ease;
+    cursor: pointer;
+`;
+
+const CompanyInput = styled.input`
+    flex: 1;
+    border: none;
+    outline: none;
+    padding: 0;
+    margin: 0;
+    color: ${({ theme }) => theme.colors.text.primary};
+    ${({ theme }) => theme.typography.CaptionRegular};
+    &::placeholder {
+    color: ${({ theme }) => theme.colors.text.muted};
+    }
+    `;
+
+const List = styled.div`
+    width: 17.125rem;
+    border: 1px solid ${({ theme }) => theme.colors.neutral[200]};
+    border-top: none;
+    border-radius: 0 0 0.25rem 0.25rem;
+    color: ${({ theme }) => theme.colors.text.secondary};
+    ${({ theme }) => theme.typography.CaptionRegular};
+    background: ${({ theme }) => theme.colors.default.white};
+    `;
+
+const Item = styled.div`
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    &:hover {
+    background: ${({ theme }) => theme.colors.neutral[100]};
+    }
+    `;
+
+export interface FilterBoxProps {
+    company: boolean;
+    placeholder: string;
+    options?: string[];
+    last?: boolean;
+}
+
+const FilterBox = ({company, placeholder, options = [], last,}: FilterBoxProps) => {
+
+    const [open, setOpen] = useState(false);
+    const [value, setValue] = useState("");
+    const complete = value.length > 0;
+    const handleArrowClick = () => {setOpen(prev => !prev);};
+    const handleSelect = (item: string) => {setValue(item);setOpen(false);};
+
+    return (
+        <>
+            <Frame isOpen={open} isComplete={complete} isCompany={company} isLast={last}>
+                {company ? (
+                    <CompanyInput placeholder={placeholder} value={value} onChange={e => setValue(e.target.value)}/>
+                ) : (
+                    <>
+                        <Text isComplete={complete}>{complete ? value : placeholder}</Text>
+                        <Arrow src={arrowIcon} alt="arrow" isOpen={open} onClick={handleArrowClick}/>
+                    </>
+                )}
+            </Frame>
+            {!company && open && (
+                <List>
+                    {options.map(item => (
+                        <Item key={item} onClick={() => handleSelect(item)}>{item}</Item>
+                    ))}
+                </List>
+            )}
+        </>
+    );
+};
+
+export default FilterBox;
