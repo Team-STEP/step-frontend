@@ -33,8 +33,8 @@ const Components = () => {
             <Check label="야간 근무" defaultChecked />
             <InputAnnouncement placeholder="placeholder" />
             <ButtonWithday isFinish={false}/>
-            <ButtonCreate isFinish={false}/>
-            <ButtonUpdate isFinish={false}/>
+            <ButtonCreate deactivate={false}/>
+            <ButtonUpdate deactivate={false}/>
             <ButtonDelete />
             <Footer />
         </>
