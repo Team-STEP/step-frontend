@@ -12,6 +12,7 @@ import InputAnnouncement from "@/widgets/input_announcement";
 import Check from "@/widgets/check";
 import ButtonWithday from "@/shared/Button/button_withday"
 import ButtonCreate from "@/shared/Button/button_create";
+import ButtonUpdate from "@/shared/Button/button_update";
 
 
 const Components = () => {
@@ -31,7 +32,8 @@ const Components = () => {
             <Check label="야간 근무" defaultChecked />
             <InputAnnouncement placeholder="placeholder" />
             <ButtonWithday isFinish={false}/>
-            <ButtonCreate isFinish={false} />
+            <ButtonCreate isFinish={false}/>
+            <ButtonUpdate isFinish={false}/>
             <Footer />
         </>
     );
