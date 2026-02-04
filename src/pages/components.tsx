@@ -13,6 +13,7 @@ import Check from "@/widgets/check";
 import ButtonWithday from "@/shared/Button/button_withday"
 import ButtonCreate from "@/shared/Button/button_create";
 import ButtonUpdate from "@/shared/Button/button_update";
+import ButtonDelete from "@/shared/Button/button_delete";
 
 
 const Components = () => {
@@ -34,6 +35,7 @@ const Components = () => {
             <ButtonWithday isFinish={false}/>
             <ButtonCreate isFinish={false}/>
             <ButtonUpdate isFinish={false}/>
+            <ButtonDelete />
             <Footer />
         </>
     );
