@@ -9,8 +9,6 @@ export const Button = styled.button<{ isFinish: boolean }>`
     ${({ theme }) => theme.typography.ParagraphRegular};
     color: ${({ theme, isFinish }) => isFinish ? theme.colors.text.muted : theme.colors.default.white};
     background-color: ${({ theme, isFinish }) => isFinish ? theme.colors.neutral[150] : theme.colors.primary[200]};
-    cursor: ${({ isFinish }) => (isFinish ? 'not-allowed' : 'pointer')};
-    pointer-events: ${({ isFinish }) => (isFinish ? 'none' : 'auto')};
     &:hover {
         background-color: ${({ theme, isFinish }) => isFinish ? theme.colors.neutral[150] : theme.colors.primary[250]};
     }

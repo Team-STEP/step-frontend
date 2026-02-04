@@ -18,30 +18,34 @@ export const DDayWrapper = styled.div`
     z-index: 2;
 `;
 
-export const Button = styled.button`
+export const Button = styled.button<{ isFinish: boolean }>`
     width: 9.375rem;
     height: 3.75rem;
     border-radius: 0.5rem;
     border: none;
     ${({ theme }) => theme.typography.ParagraphRegular};
-    color: ${({ theme }) => theme.colors.default.white};
-    background-color: ${({ theme }) => theme.colors.primary[200]};
+    color: ${({ theme, isFinish }) => isFinish ? theme.colors.text.muted : theme.colors.default.white};
+    background-color: ${({ theme, isFinish }) => isFinish ? theme.colors.neutral[150] : theme.colors.primary[200]};
     &:hover {
-        background-color: ${({ theme }) => theme.colors.primary[250]};
+        background-color: ${({ theme, isFinish }) => isFinish ? theme.colors.neutral[150] : theme.colors.primary[250]};
     }
     &:active {
-        background-color: ${({ theme }) => theme.colors.primary[300]};
-        transform: scale(0.96);
+        background-color: ${({ theme, isFinish }) => isFinish ? theme.colors.neutral[150] : theme.colors.primary[300]};
+        transform: ${({ isFinish }) => (isFinish ? 'none' : 'scale(0.96)')};
     }
 `;
 
-const ButtonWithday = () => {
+interface ButtonProps {
+    isFinish: boolean;
+}
+
+const ButtonWithday= ({ isFinish }: ButtonProps) => {
     return (
         <Frame>
             <DDayWrapper>
                 <DDay isFinish={false} />
             </DDayWrapper>
-            <Button>지원하기</Button>
+            <Button isFinish={isFinish}>지원하기</Button>
         </Frame>
     );
 };

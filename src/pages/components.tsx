@@ -30,7 +30,7 @@ const Components = () => {
             <Check label="주 5일" />
             <Check label="야간 근무" defaultChecked />
             <InputAnnouncement placeholder="placeholder" />
-            <ButtonWithday />
+            <ButtonWithday isFinish={false}/>
             <ButtonCreate isFinish={false} />
             <Footer />
         </>
