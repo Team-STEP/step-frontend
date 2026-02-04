@@ -4,7 +4,7 @@ import styled from "@emotion/styled"
 const DDayFrame = styled.div<{ isFinish: boolean }>`
     display: flex;
     height: 2rem;
-    padding: 0.375rem 1rem;
+    padding: 0.19rem 1rem;
     justify-content: center;
     align-items: center;
     gap: 0.625rem;
