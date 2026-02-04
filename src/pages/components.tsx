@@ -14,6 +14,7 @@ import ButtonWithday from "@/shared/Button/button_withday"
 import ButtonCreate from "@/shared/Button/button_create";
 import ButtonUpdate from "@/shared/Button/button_update";
 import ButtonDelete from "@/shared/Button/button_delete";
+import ButtonBack from "@/shared/Button/button_back";
 
 
 const Components = () => {
@@ -36,6 +37,7 @@ const Components = () => {
             <ButtonCreate deactivate={false}/>
             <ButtonUpdate deactivate={false}/>
             <ButtonDelete />
+            <ButtonBack />
             <Footer />
         </>
     );
