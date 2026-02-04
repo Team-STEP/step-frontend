@@ -6,10 +6,11 @@ import Notice from "@/widgets/notice";
 import InputDefault from "@/widgets/input_default";
 import MyProcess from "@/widgets/myprocess";
 import AnnouncementMain from "@/widgets/announcement_main";
-import FilterBox from "@/widgets/filter-box.tsx"
+import FilterBox from "@/widgets/filter-box"
 import Comment from "@/widgets/comment";
-import InputAnnouncement from "@/widgets/input_announcement.tsx";
+import InputAnnouncement from "@/widgets/input_announcement";
 import Check from "@/widgets/check";
+import ButtonWithday from "@/shared/Button/button_withday.tsx"
 
 
 const Components = () => {
@@ -28,6 +29,7 @@ const Components = () => {
             <Check label="주 5일" />
             <Check label="야간 근무" defaultChecked />
             <InputAnnouncement placeholder="placeholder" />
+            <ButtonWithday />
             <Footer />
         </>
     );
