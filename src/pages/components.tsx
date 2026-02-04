@@ -10,7 +10,8 @@ import FilterBox from "@/widgets/filter-box"
 import Comment from "@/widgets/comment";
 import InputAnnouncement from "@/widgets/input_announcement";
 import Check from "@/widgets/check";
-import ButtonWithday from "@/shared/Button/button_withday.tsx"
+import ButtonWithday from "@/shared/Button/button_withday"
+import ButtonCreate from "@/shared/Button/button_create";
 
 
 const Components = () => {
@@ -30,6 +31,7 @@ const Components = () => {
             <Check label="야간 근무" defaultChecked />
             <InputAnnouncement placeholder="placeholder" />
             <ButtonWithday />
+            <ButtonCreate isFinish={false} />
             <Footer />
         </>
     );
