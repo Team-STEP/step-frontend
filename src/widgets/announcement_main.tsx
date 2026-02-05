@@ -1,9 +1,9 @@
 import styled from "@emotion/styled";
-import place from "@/shared/assets/place_icon.png";
-import company from "@/shared/assets/company_icon.png";
+import place from "@/shared/assets/place_icon(muted).png";
+import company from "@/shared/assets/company_icon(muted).png";
 import DDay from "@/shared/D-day/D-day.tsx";
-import person from "@/shared/assets/person_icon.png";
-import role from "@/shared/assets/role_icon.png";
+import person from "@/shared/assets/person_icon(muted).png";
+import role from "@/shared/assets/role_icon(muted).png";
 
 
 const Frame = styled.div`
