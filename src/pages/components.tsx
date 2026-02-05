@@ -15,6 +15,7 @@ import ButtonCreate from "@/shared/Button/button_create";
 import ButtonUpdate from "@/shared/Button/button_update";
 import ButtonDelete from "@/shared/Button/button_delete";
 import ButtonBack from "@/shared/Button/button_back";
+import AnnouncementPage from "@/widgets/announcement_page";
 
 
 const Components = () => {
@@ -28,16 +29,17 @@ const Components = () => {
             <MyProcess status="first" />
             <AnnouncementMain />
             <Comment />
-            <FilterBox company={false} placeholder="지역을 선택하세요" options={["서울, 경기", "부산, 경남", "대구, 경북"]}/>
-            <FilterBox company={true} placeholder="회사 이름을 검색하세요"/>
+            <FilterBox company={false} placeholder="지역을 선택하세요" options={["서울, 경기", "부산, 경남", "대구, 경북"]} />
+            <FilterBox company={true} placeholder="회사 이름을 검색하세요" />
             <Check label="주 5일" />
             <Check label="야간 근무" defaultChecked />
             <InputAnnouncement placeholder="placeholder" />
-            <ButtonWithday isFinish={false}/>
-            <ButtonCreate deactivate={false}/>
-            <ButtonUpdate deactivate={false}/>
+            <ButtonWithday isFinish={false} />
+            <ButtonCreate deactivate={false} />
+            <ButtonUpdate deactivate={false} />
             <ButtonDelete />
             <ButtonBack />
+            <AnnouncementPage />
             <Footer />
         </>
     );
