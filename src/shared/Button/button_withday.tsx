@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import DDay from "@/shared/D_day/D_day";
+import DDay from "@/shared/D-day/D-day.tsx";
 
 export const Frame = styled.div`
     position: relative;

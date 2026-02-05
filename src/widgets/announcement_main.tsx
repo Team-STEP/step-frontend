@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
 import place from "@/shared/assets/place_icon.png";
 import company from "@/shared/assets/company_icon.png";
-import DDay from "@/shared/D_day/D_day";
+import DDay from "@/shared/D-day/D-day.tsx";
 import person from "@/shared/assets/person_icon.png";
 import role from "@/shared/assets/role_icon.png";
 
