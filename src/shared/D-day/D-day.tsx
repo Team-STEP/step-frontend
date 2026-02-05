@@ -20,14 +20,14 @@ const DDayFrame = styled.div<{ isFinish: boolean }>`
 
 interface DDayProps {
     isFinish: boolean;
-    remindDay: number;
+    remainingDay: number;
 }
 
-const DDay = ({ isFinish, remindDay }: DDayProps) => {
+const DDay = ({ isFinish, remainingDay }: DDayProps) => {
     return (
         <DDayFrame isFinish={isFinish}>
             {
-                isFinish ? (<p>D-{remindDay}</p>) : (<p>마감</p>)
+                isFinish ? (<p>D-{remainingDay}</p>) : (<p>마감</p>)
             }
         </DDayFrame>
     )
