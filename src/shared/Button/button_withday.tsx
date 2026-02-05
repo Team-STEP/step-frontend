@@ -39,11 +39,11 @@ interface ButtonProps {
     isFinish: boolean;
 }
 
-const ButtonWithday= ({ isFinish }: ButtonProps) => {
+const ButtonWithday = ({ isFinish }: ButtonProps) => {
     return (
         <Frame>
             <DDayWrapper>
-                <DDay isFinish={false} />
+                <DDay isFinish={false} remainingDay={123} />
             </DDayWrapper>
             <Button isFinish={isFinish}>지원하기</Button>
         </Frame>

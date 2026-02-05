@@ -257,7 +257,7 @@ const AnnouncementMain = () => {
             <Content>
                 <Info>
                     <TitleContent>
-                        <DDay isFinish={false} />
+                        <DDay isFinish={false} remainingDay={33} />
                         <TitleContentBox>
                             <CompanyTitle>주(코드잇)</CompanyTitle>
                             <MainTitle>UX/UI 디자이너 모집</MainTitle>
