@@ -3,7 +3,8 @@ import DDay from "@/shared/D-day/D-day.tsx";
 
 export const Frame = styled.div`
     position: relative;
-    width: 9.375rem;
+    width: 8.375rem;
+    height: 4.9375rem;
     margin: 3rem; /* 컴포넌트 구분용 코드 - 사용할 땐 지우기!!! */
 `;
 
@@ -19,8 +20,7 @@ export const DDayWrapper = styled.div`
 `;
 
 export const Button = styled.button<{ isFinish: boolean }>`
-    width: 9.375rem;
-    height: 3.75rem;
+    padding: 0.75rem 2rem;
     border-radius: 0.5rem;
     border: none;
     ${({ theme }) => theme.typography.ParagraphRegular};
