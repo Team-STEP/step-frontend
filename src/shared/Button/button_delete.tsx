@@ -2,8 +2,9 @@ import styled from '@emotion/styled';
 
 export const Button = styled.button`
     margin-left: 2rem; /* 컴포넌트 구분용 코드 - 사용할 땐 지우기!!! */
-    height: 3.75rem;
-    padding: 0.75rem 1.5rem;
+    padding: 0.5rem 1.25rem;
+    justify-content: center;
+    align-items: center;
     border-radius: 0.5rem;
     border: none;
     ${({ theme }) => theme.typography.ParagraphRegular};
@@ -20,7 +21,7 @@ export const Button = styled.button`
 
 const ButtonDelete = () => {
     return (
-        <Button>삭제하기</Button>
+        <Button>삭제</Button>
     );
 };
 
