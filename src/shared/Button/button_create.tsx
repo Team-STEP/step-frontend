@@ -1,9 +1,9 @@
 import styled from '@emotion/styled';
 
 export const Button = styled.button<{ deactivate: boolean }>`
-    width: 9.375rem;
-    height: 3.75rem;
-    padding: 0.75rem 1.5rem;
+    padding: 0.5rem 2rem;
+    justify-content: center;
+    align-items: center;
     border-radius: 0.5rem;
     border: none;
     ${({ theme }) => theme.typography.ParagraphRegular};
