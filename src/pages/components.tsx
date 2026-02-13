@@ -20,6 +20,7 @@ import DefaultButton from "@/widgets/default_button";
 import ButtonFile from "@/widgets/button_file";
 import Student from "@/widgets/student";
 import ApplyList from "@/widgets/apply_list";
+import StudentCard from "@/widgets/student_card";
 
 
 const Components = () => {
@@ -50,6 +51,7 @@ const Components = () => {
             <ButtonFile deactivate={true} />
             <Student />
             <ApplyList />
+            <StudentCard />
             <Footer />
         </>
     );
