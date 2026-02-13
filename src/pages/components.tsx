@@ -18,6 +18,7 @@ import ButtonBack from "@/shared/Button/button_back";
 import AnnouncementPage from "@/widgets/announcement_page";
 import DefaultButton from "@/widgets/default_button";
 import ButtonFile from "@/widgets/button_file";
+import Student from "@/widgets/student";
 
 
 const Components = () => {
@@ -46,6 +47,7 @@ const Components = () => {
             <DefaultButton deactivate={true} />
             <ButtonFile />
             <ButtonFile deactivate={true} />
+            <Student />
             <Footer />
         </>
     );
