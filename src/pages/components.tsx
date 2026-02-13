@@ -21,7 +21,7 @@ import ButtonFile from "@/widgets/button_file";
 import Student from "@/widgets/student";
 import ApplyList from "@/widgets/apply_list";
 import StudentCard from "@/widgets/student_card";
-
+import SubmitFile from "@/widgets/submit_file";
 
 const Components = () => {
     return (
@@ -52,6 +52,7 @@ const Components = () => {
             <Student />
             <ApplyList />
             <StudentCard />
+            <SubmitFile />
             <Footer />
         </>
     );
