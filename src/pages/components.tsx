@@ -16,7 +16,12 @@ import ButtonUpdate from "@/shared/Button/button_update";
 import ButtonDelete from "@/shared/Button/button_delete";
 import ButtonBack from "@/shared/Button/button_back";
 import AnnouncementPage from "@/widgets/announcement_page";
-
+import DefaultButton from "@/widgets/default_button";
+import ButtonFile from "@/widgets/button_file";
+import Student from "@/widgets/student";
+import ApplyList from "@/widgets/apply_list";
+import StudentCard from "@/widgets/student_card";
+import SubmitFile from "@/widgets/submit_file";
 
 const Components = () => {
     return (
@@ -40,6 +45,14 @@ const Components = () => {
             <ButtonDelete />
             <ButtonBack />
             <AnnouncementPage />
+            <DefaultButton />
+            <DefaultButton deactivate={true} />
+            <ButtonFile />
+            <ButtonFile deactivate={true} />
+            <Student />
+            <ApplyList />
+            <StudentCard />
+            <SubmitFile />
             <Footer />
         </>
     );
